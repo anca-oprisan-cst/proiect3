@@ -1,0 +1,30 @@
+<div class="card">
+  <img [src]="persoana.linkPozaProfil" alt="Peisaj">
+  <ng-content></ng-content>
+  <div>
+    Nume: {{persoana.nume | titlecase}}
+  </div>
+  <div>
+    Varsta: {{persoana.varsta}}
+  </div>
+
+<!--  <div [ngClass]="persoana.inaltime > 165 ? 'blue-text' : 'green-text'">-->
+<!--    Inaltime: {{persoana.inaltime}}-->
+<!--  </div>-->
+
+<!--  <div [ngStyle]="{-->
+<!--  'color': persoana.inaltime > 165 ? 'deepskyblue' : 'forestgreen',-->
+<!--  'background' : persoana.inaltime > 165 ? 'lightgray' : 'lightblue'}">-->
+<!--    Inaltime: {{persoana.inaltime}}-->
+<!--  </div>-->
+
+<!--  <div [style.color]="persoana.inaltime > 165 ? 'deepskyblue' : 'forestgreen'">-->
+<!--    Inaltime: {{persoana.inaltime}}-->
+<!--  </div>-->
+
+
+  <div>{{date | date:'dd/MM/yyyy'}}</div>
+
+  <button (click)="delete()">Delete</button>
+  <button (click)="schimbaNume()">Schimba Nume</button>
+</div>

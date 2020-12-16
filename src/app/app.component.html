@@ -1,0 +1,29 @@
+<h1>{{title | truncatePipe:16}}</h1>
+
+<div>
+  <div class="input-container">
+    <label>Nume:</label>
+    <input type="text" [(ngModel)]="nume">
+  </div>
+  <div class="input-container">
+    <label>Varsta:</label>
+    <input type="number" [ngModel]="varsta" (ngModelChange)="varstaChanged($event)">
+  </div>
+  <div class="input-container">
+    <label>Inaltime:</label>
+    <input type="number" [(ngModel)]="inaltime">
+  </div>
+  <div class="input-container">
+    <label>Link Poza Profil:</label>
+    <input type="text" [(ngModel)]="linkPozaProfil">
+  </div>
+  <button (click)="adaugaPersoana()" [disabled]="buttonDisabled">Adauga persoana</button>
+</div>
+
+<div class="card-container">
+  <app-test *ngFor="let persoana of persoane; let i=index" [persoana]="persoana" [nume]="numePrimaPersoana"
+    (deleteEvent)="deleteCard(i)" (event)="eventEmis()">
+    <h2>Persoana {{i+1}}</h2>
+    <p>Card</p>
+  </app-test>
+</div>
